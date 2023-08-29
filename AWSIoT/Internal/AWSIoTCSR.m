@@ -80,10 +80,11 @@ unsigned char setTag = 0x31;
     
     unsigned char sig[256];
     size_t sigLen = sizeof(sig);
-    OSStatus sanityCheck = SecKeyRawSign(privateKeyRef, kSecPaddingPKCS1SHA256, SHA256Digest, sizeof(SHA256Digest), sig, &sigLen);
-    if (sanityCheck != noErr) {
-        return nil;
-    }
+
+//    OSStatus sanityCheck = SecKeyRawSign(privateKeyRef, kSecPaddingPKCS1SHA256, SHA256Digest, sizeof(SHA256Digest), sig, &sigLen);
+//    if (sanityCheck != noErr) {
+//        return nil;
+//    }
     
     NSMutableData * scr = [[NSMutableData alloc] initWithData:certRequestData];
 

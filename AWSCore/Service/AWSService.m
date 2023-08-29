@@ -15,7 +15,7 @@
 
 #import "AWSService.h"
 
-#import <UIKit/UIKit.h>
+#import <Cocoa/Cocoa.h>
 #import "AWSSynchronizedMutableDictionary.h"
 #import "AWSURLResponseSerialization.h"
 #import "AWSCocoaLumberjack.h"
@@ -168,11 +168,11 @@ static NSString *const AWSServiceConfigurationUnknown = @"Unknown";
     static NSString *_userAgent = nil;
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
-        NSString *systemName = [[[UIDevice currentDevice] systemName] stringByReplacingOccurrencesOfString:@" " withString:@"-"];
+        NSString *systemName = [[[NSProcessInfo processInfo] operatingSystemVersionString] stringByReplacingOccurrencesOfString:@" " withString:@"-"];
         if (!systemName) {
             systemName = AWSServiceConfigurationUnknown;
         }
-        NSString *systemVersion = [[UIDevice currentDevice] systemVersion];
+        NSString *systemVersion = [[NSProcessInfo processInfo] operatingSystemVersionString];
         if (!systemVersion) {
             systemVersion = AWSServiceConfigurationUnknown;
         }
@@ -180,7 +180,7 @@ static NSString *const AWSServiceConfigurationUnknown = @"Unknown";
         if (!localeIdentifier) {
             localeIdentifier = AWSServiceConfigurationUnknown;
         }
-        _userAgent = [NSString stringWithFormat:@"aws-sdk-iOS/%@ %@/%@ %@", AWSiOSSDKVersion, systemName, systemVersion, localeIdentifier];
+        _userAgent = [NSString stringWithFormat:@"aws-sdk-macOS/%@ %@/%@ %@", AWSiOSSDKVersion, systemName, systemVersion, localeIdentifier];
     });
 
     NSMutableString *userAgent = [NSMutableString stringWithString:_userAgent];

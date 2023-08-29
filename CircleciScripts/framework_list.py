@@ -11,71 +11,71 @@ grouped_frameworks = [
     ["AWSCore"],
     [
         # Depends only on AWSCore
-        "AWSCognitoIdentityProviderASF"
+#        "AWSCognitoIdentityProviderASF"
     ],
     [
         # Depends only on AWSCognitoIdentityProviderASF
-        "AWSCognitoAuth",
+#        "AWSCognitoAuth",
         # Depends on AWSCore and AWSCognitoIdentityProviderASF
-        "AWSCognitoIdentityProvider",
+#        "AWSCognitoIdentityProvider",
         # Depends only on AWSCore
-        "AWSAuthCore",
+#        "AWSAuthCore",
         # Service-API packages depend only on AWSCore
         "AWSAPIGateway",
-        "AWSAutoScaling",
-        "AWSChimeSDKIdentity",
-        "AWSChimeSDKMessaging",
-        "AWSCloudWatch",
-        "AWSComprehend",
-        "AWSConnect",
-        "AWSConnectParticipant",
-        "AWSDynamoDB",
-        "AWSEC2",
-        "AWSElasticLoadBalancing",
+#        "AWSAutoScaling",
+#        "AWSChimeSDKIdentity",
+#        "AWSChimeSDKMessaging",
+#        "AWSCloudWatch",
+#        "AWSComprehend",
+#        "AWSConnect",
+#        "AWSConnectParticipant",
+#        "AWSDynamoDB",
+#        "AWSEC2",
+#        "AWSElasticLoadBalancing",
         "AWSIoT",
-        "AWSKMS",
-        "AWSKinesis",
-        "AWSKinesisVideo",
-        "AWSKinesisVideoArchivedMedia",
-        "AWSKinesisVideoSignaling",
-        "AWSKinesisVideoWebRTCStorage",
-        "AWSLambda",
-        "AWSLex",
-        "AWSLocation",
-        "AWSLogs",
-        "AWSMachineLearning",
-        "AWSPinpoint",
-        "AWSPolly",
-        "AWSRekognition",
-        "AWSS3",
-        "AWSSES",
-        "AWSSNS",
-        "AWSSQS",
-        "AWSSageMakerRuntime",
-        "AWSSimpleDB",
-        "AWSTextract",
-        "AWSTranscribe",
-        "AWSTranscribeStreaming",
-        "AWSTranslate",
+#        "AWSKMS",
+#        "AWSKinesis",
+#        "AWSKinesisVideo",
+#        "AWSKinesisVideoArchivedMedia",
+#        "AWSKinesisVideoSignaling",
+#        "AWSKinesisVideoWebRTCStorage",
+#        "AWSLambda",
+#        "AWSLex",
+#        "AWSLocation",
+#        "AWSLogs",
+#        "AWSMachineLearning",
+#        "AWSPinpoint",
+#        "AWSPolly",
+#        "AWSRekognition",
+#        "AWSS3",
+#        "AWSSES",
+#        "AWSSNS",
+#        "AWSSQS",
+#        "AWSSageMakerRuntime",
+#        "AWSSimpleDB",
+#        "AWSTextract",
+#        "AWSTranscribe",
+#        "AWSTranscribeStreaming",
+#        "AWSTranslate",
     ],
     [
         # Depends on AWSCore and AWSAuthCore
-        "AWSAuthUI",
+#        "AWSAuthUI",
         # Depends only on AWSAuthCore (and possibly external Pods, but nothing else
         # built locally)
-        "AWSAppleSignIn",
-        "AWSFacebookSignIn",
-        "AWSGoogleSignIn",
+#        "AWSAppleSignIn",
+#        "AWSFacebookSignIn",
+#        "AWSGoogleSignIn",
         # Depends only on AWSAuthCore and AWSCognitoIdentityProvider
-        "AWSMobileClient",
-        "AWSUserPoolsSignIn",
+#        "AWSMobileClient",
+#        "AWSUserPoolsSignIn",
     ],
     [
         # Depends on most previous packages except auth
         "AWSiOSSDKv2",
         # Depends on AWSAuthCore, AWSAppleSignIn, AWSFacebookSignIn, AWSGoogleSignIn,
         # AWSUserPoolsSignIn and AWSAuthUI
-        "AWSAuth",
+#        "AWSAuth",
     ],
 ]
 
@@ -83,11 +83,11 @@ excluded_from_xcframeworks = [
     # This isn't a real framework
     "AWSiOSSDKv2",
     # Legacy frameworks not built or packaged
-    "AWSAuth",
+#    "AWSAuth",
     # AWSMobileClient is named as AWSMobileClientXCF and will be added later.
-    "AWSMobileClient",
+#    "AWSMobileClient",
     # AWSLocation is named as AWSLocationXCF and will be added later.
-    "AWSLocation"
+#    "AWSLocation"
 ]
 
 def is_framework_included(framework):
@@ -96,4 +96,4 @@ def is_framework_included(framework):
 # flatten the grouped frameworks
 frameworks = [framework for group in grouped_frameworks for framework in group]
 
-xcframeworks = list(filter(is_framework_included, frameworks)) + ["AWSMobileClientXCF", "AWSLocationXCF"]
+xcframeworks = list(filter(is_framework_included, frameworks)) # + ["AWSMobileClientXCF", "AWSLocationXCF"]

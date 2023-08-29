@@ -14,7 +14,7 @@
  */
 
 #import <Foundation/Foundation.h>
-#import <UIKit/UIKit.h>
+#import <Cocoa/Cocoa.h>
 
 @class AWSPinpoint;
 

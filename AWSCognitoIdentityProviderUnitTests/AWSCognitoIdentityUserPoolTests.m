@@ -14,7 +14,7 @@
 //
 
 #import <Foundation/Foundation.h>
-#import <UIKit/UIKit.h>
+#import <Cocoa/Cocoa.h>
 #import <XCTest/XCTest.h>
 #import "AWSTestUtility.h"
 #import "AWSCognitoIdentityUserPool.h"

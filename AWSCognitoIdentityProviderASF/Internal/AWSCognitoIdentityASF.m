@@ -1,5 +1,5 @@
 #import "AWSCognitoIdentityASF.h"
-#import <UIKit/UIKit.h>
+#import <Cocoa/Cocoa.h>
 #import <sys/utsname.h>
 #import <CommonCrypto/CommonHMAC.h>
 #import <AWSCore/AWSCocoaLumberjack.h>

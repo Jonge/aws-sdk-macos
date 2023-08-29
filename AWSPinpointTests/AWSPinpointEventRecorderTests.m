@@ -15,7 +15,7 @@
 
 #if !AWS_TEST_BJS_INSTEAD
 
-#import <UIKit/UIKit.h>
+#import <Cocoa/Cocoa.h>
 #import <XCTest/XCTest.h>
 #import <AWSCore/AWSCore.h>
 #import "AWSPinpointContext.h"
